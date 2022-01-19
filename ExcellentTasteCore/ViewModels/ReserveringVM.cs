@@ -7,5 +7,6 @@ namespace ExcellentTasteCore.ViewModels
 {
     public class ReserveringVM
     {
+
     }
 }

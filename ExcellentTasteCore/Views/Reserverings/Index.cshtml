@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ExcellentTasteCore.Models.Reservering>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tijd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tafel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AantalPersonen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumToegevoegd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BonDatum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Betalingswijze)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BonTotaal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klant)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tijd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tafel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AantalPersonen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumToegevoegd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BonDatum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Betalingswijze)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BonTotaal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Klant.KlantNaam)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReserveringId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReserveringId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReserveringId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
