@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ExcellentTasteCore.Data;
 using ExcellentTasteCore.Models;
+using ExcellentTasteCore.ViewModels;
 
 namespace ExcellentTasteCore.Controllers
 {
