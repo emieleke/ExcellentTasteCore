@@ -84,7 +84,7 @@ namespace ExcellentTasteCore.Data
                     .IsUnicode(false)
                     .HasColumnName("ConsumptieCode");
 
-                entity.Property(e => e.ConsumptieNaam)
+                entity.Property(e => e.Consumpties)
                     .IsRequired()
                     .HasMaxLength(20)
                     .IsUnicode(false)
