@@ -1,18 +1,23 @@
 ﻿html {
     font-size: 14px;
+    color: darkgoldenrod;
 }
 
 @media (min-width: 768px) {
     html {
         font-size: 16px;
+        color: darkgoldenrod;
     }
 }
 
 html {
     position: relative;
     min-height: 100%;
+    color: darkgoldenrod;
 }
 
 body {
     margin-bottom: 60px;
+    background-color: black;
+    color: darkgoldenrod;
 }

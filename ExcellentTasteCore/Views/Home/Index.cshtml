@@ -4,5 +4,33 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    @{ ViewData["Title"] = "Home Page"; }
+
+    <div class="container text-center my-4">
+        <h1 class="pb-4">Welkom<br /> Bestel Nu!</h1>
+    </div>
+
+    <div class="greybg container-fluid px-0">
+        @*Hieronder staat alles over de div "over ons"*@
+        <div class="row no-gutters">
+            <div class="container text-center my-4">
+                <img class="w-100" src="~/image/afbeelding1.png" />
+            </div>
+            <div class="container text-center my-4">
+                <h1 class="pb-3">Over ons</h1>
+                <p class="text-white">
+                    Restaurant Excellent Taste<br />
+                    Westerbloem 24<br />
+                    8273 VN Nijverdal<br />
+                    Postbus 4
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center py-5">
+
+        <h1 class="pb-4">Reserveer nu!</h1>
+        <p>Reserveer nu hier bij Excellent Taste</p>
+        <p>
+            Heb je vragen? Bel ons 06-49438257<br />
+    </div>
