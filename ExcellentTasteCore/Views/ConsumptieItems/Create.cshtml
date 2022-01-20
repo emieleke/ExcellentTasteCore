@@ -1,0 +1,47 @@
+﻿@model ExcellentTasteCore.Models.ConsumptieItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ConsumptieItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ConsumptieItemCode" class="control-label"></label>
+                <input asp-for="ConsumptieItemCode" class="form-control" />
+                <span asp-validation-for="ConsumptieItemCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConsumptieGroepCode" class="control-label"></label>
+                <select asp-for="ConsumptieGroepCode" class ="form-control" asp-items="ViewBag.ConsumptieGroepCode"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConsumptieItemNaam" class="control-label"></label>
+                <input asp-for="ConsumptieItemNaam" class="form-control" />
+                <span asp-validation-for="ConsumptieItemNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prijs" class="control-label"></label>
+                <input asp-for="Prijs" class="form-control" />
+                <span asp-validation-for="Prijs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
