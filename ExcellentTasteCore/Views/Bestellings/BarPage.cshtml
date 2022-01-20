@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ExcellentTasteCore.Models.Bestelling>
+
+@{
+    ViewData["Title"] = "BarPage";
+}
+
+<h1>BarPage</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Aantal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTimeBereidingConsumptie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsumptieItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservering)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aantal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeBereidingConsumptie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservering.ReserveringId)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>

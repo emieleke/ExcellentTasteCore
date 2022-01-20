@@ -22,32 +22,30 @@ namespace ExcellentTasteCore.Controllers
         // GET: Bestellings
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Bestelling.Include(b => b.ConsumptieItem).Include(b => b.Reservering);
+            var applicationDbContext = _context.Bestelling.Include(b => b.ConsumptieItem)
+                .Include(b => b.Reservering);
             
             return View(await applicationDbContext.ToListAsync());
         }
 
+        //List of orders for the chefkok, only shows orders of food
         public async Task<IActionResult> KokPage()
         {
-            return View(await _context.Consumpties.Include(b => b.ConsumptieCode).Where(b => b.ConsumptieCode == "drk").ToListAsync());
+            var applicationDbContext = _context.Bestelling
+                .Where(b => b.ConsumptieItem.ConsumptieGroep.Consumptie.ConsumptieCode != "drk")
+                .OrderByDescending(b => b.DateTimeBereidingConsumptie)
+                .Include(b => b.Reservering)
+                .Include(b => b.ConsumptieItem);
+            return View(await applicationDbContext.ToListAsync());
         }
-        public async Task<IActionResult> KokpageDetail(string? id)
+        public async Task<IActionResult> BarPage()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var consumptie = await _context.Consumpties
-                .Include(b => b.Consumpties)          
-                .FirstOrDefaultAsync(m => m.ConsumptieCode == id);
-                
-            if (consumptie == null)
-            {
-                return NotFound();
-            }
-
-            return View(consumptie);
+            var applicationDbContext = _context.Bestelling
+                .Where(b => b.ConsumptieItem.ConsumptieGroep.Consumptie.ConsumptieCode == "drk")
+                .OrderByDescending(b => b.DateTimeBereidingConsumptie)
+                .Include(b => b.Reservering)
+                .Include(b => b.ConsumptieItem);
+            return View(await applicationDbContext.ToListAsync());
         }
         // GET: Bestellings/Details/5
         public async Task<IActionResult> Details(int? id)

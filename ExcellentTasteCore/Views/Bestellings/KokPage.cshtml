@@ -1,15 +1,11 @@
 ﻿@model IEnumerable<ExcellentTasteCore.Models.Bestelling>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "KokPage";
 }
 
-<h1>Index</h1>
+<h1>KokPage</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<class asp-controller="bestellings" asp-action="KokPage"></class>
 <table class="table">
     <thead>
         <tr>
@@ -20,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.DateTimeBereidingConsumptie)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ConsumptieItem.ConsumptieItemNaam)
+                @Html.DisplayNameFor(model => model.ConsumptieItem)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Reservering)
@@ -30,7 +26,6 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-       
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Aantal)
@@ -39,18 +34,12 @@
                 @Html.DisplayFor(modelItem => item.DateTimeBereidingConsumptie)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam) 
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Reservering.ReserveringId)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BestellingId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BestellingId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BestellingId">Delete</a> |
-                
-            </td>
         </tr>
-    }
+}
     </tbody>
 </table>
