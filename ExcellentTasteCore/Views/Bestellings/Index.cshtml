@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ExcellentTasteCore.Models.Bestelling>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<class asp-controller="bestellings" asp-action="Index"></class>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Aantal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTimeBereidingConsumptie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsumptieItem.ConsumptieItemNaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservering)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+       
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aantal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeBereidingConsumptie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservering.ReserveringId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BestellingId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BestellingId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BestellingId">Delete</a> |
+                <a asp-action="KokpageDetail" asp-route-id="@item.BestellingId">KokDetails</a>
+
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

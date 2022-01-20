@@ -15,9 +15,8 @@ namespace ExcellentTasteCore.Models
 
 
         public string ConsumptieCode { get; set; }
-        
-    
-        public string ConsumptieNaam { get; set; }
+       
+        public string Consumpties { get; set; }
 
         public virtual ICollection<ConsumptieGroep> ConsumptieGroep { get; set; }
     }
