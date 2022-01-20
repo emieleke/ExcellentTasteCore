@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<class asp-controller="bestellings" asp-action="Index"></class>
+<class asp-controller="bestellings" asp-action="KokPage"></class>
 <table class="table">
     <thead>
         <tr>
@@ -48,7 +48,7 @@
                 <a asp-action="Edit" asp-route-id="@item.BestellingId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.BestellingId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.BestellingId">Delete</a> |
-
+                
             </td>
         </tr>
     }

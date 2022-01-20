@@ -23,11 +23,32 @@ namespace ExcellentTasteCore.Controllers
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Bestelling.Include(b => b.ConsumptieItem).Include(b => b.Reservering);
-
-           
+            
             return View(await applicationDbContext.ToListAsync());
         }
 
+        public async Task<IActionResult> KokPage()
+        {
+            return View(await _context.Consumpties.Include(b => b.ConsumptieCode).Where(b => b.ConsumptieCode == "drk").ToListAsync());
+        }
+        public async Task<IActionResult> KokpageDetail(string? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var consumptie = await _context.Consumpties
+                .Include(b => b.Consumpties)          
+                .FirstOrDefaultAsync(m => m.ConsumptieCode == id);
+                
+            if (consumptie == null)
+            {
+                return NotFound();
+            }
+
+            return View(consumptie);
+        }
         // GET: Bestellings/Details/5
         public async Task<IActionResult> Details(int? id)
         {
