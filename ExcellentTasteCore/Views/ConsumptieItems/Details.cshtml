@@ -1,0 +1,36 @@
+﻿@model ExcellentTasteCore.Models.ConsumptieItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ConsumptieItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConsumptieItemNaam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConsumptieItemNaam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prijs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prijs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConsumptieGroep)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConsumptieGroep.ConsumptieGroepCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ConsumptieItemCode">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
