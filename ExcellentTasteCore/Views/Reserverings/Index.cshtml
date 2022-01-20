@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Reserveringen</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="font-size: 10px;">
     <thead>
         <tr>
             <th>
@@ -20,6 +20,24 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Tafel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Straat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Huisnummer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Toevoeging)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Woonplaats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Land)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AantalPersonen)
@@ -58,6 +76,24 @@
                 @Html.DisplayFor(modelItem => item.Tafel)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Straat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Huisnummer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toevoeging)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Woonplaats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Land)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.AantalPersonen)
             </td>
             <td>
@@ -81,8 +117,7 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ReserveringId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ReserveringId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReserveringId">Delete</a> |
-                <a asp-action="Create" asp-controller="Bestellings">Neem bestelling op</a>
+                <a asp-action="Delete" asp-route-id="@item.ReserveringId">Delete</a>
             </td>
         </tr>
 }

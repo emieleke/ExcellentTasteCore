@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ExcellentTasteCore.Data;
 using ExcellentTasteCore.Models;
-using ExcellentTasteCore.ViewModels;
 
 namespace ExcellentTasteCore.Controllers
 {
@@ -58,7 +57,7 @@ namespace ExcellentTasteCore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReserveringId,KlantId,Datum,Tijd,Tafel,AantalPersonen,Status,DatumToegevoegd,BonDatum,Betalingswijze,BonTotaal")] Reservering reservering)
+        public async Task<IActionResult> Create([Bind("ReserveringId,KlantId,Datum,Tijd,Tafel,Straat,Huisnummer,Toevoeging,Postcode,Woonplaats,Land,AantalPersonen,Status,DatumToegevoegd,BonDatum,Betalingswijze,BonTotaal")] Reservering reservering)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +91,7 @@ namespace ExcellentTasteCore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReserveringId,KlantId,Datum,Tijd,Tafel,AantalPersonen,Status,DatumToegevoegd,BonDatum,Betalingswijze,BonTotaal")] Reservering reservering)
+        public async Task<IActionResult> Edit(int id, [Bind("ReserveringId,KlantId,Datum,Tijd,Tafel,Straat,Huisnummer,Toevoeging,Postcode,Woonplaats,Land,AantalPersonen,Status,DatumToegevoegd,BonDatum,Betalingswijze,BonTotaal")] Reservering reservering)
         {
             if (id != reservering.ReserveringId)
             {

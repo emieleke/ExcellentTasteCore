@@ -16,7 +16,7 @@ namespace ExcellentTasteCore.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.11")
+                .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("ExcellentTasteCore.Models.Bestelling", b =>
@@ -42,6 +42,15 @@ namespace ExcellentTasteCore.Data.Migrations
                         .HasColumnType("datetime")
                         .HasColumnName("DateTimeBereidingConsumptie");
 
+                    b.Property<int>("Huisnummer")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Land")
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<string>("Postcode")
+                        .HasColumnType("varchar(max)");
+
                     b.Property<decimal?>("Prijs")
                         .HasColumnType("decimal(19,4)")
                         .HasColumnName("Prijs");
@@ -50,9 +59,18 @@ namespace ExcellentTasteCore.Data.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ReserveringId");
 
+                    b.Property<string>("Straat")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Toevoeging")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal?>("Totaal")
                         .HasColumnType("decimal(19,4)")
                         .HasColumnName("Totaal");
+
+                    b.Property<string>("Woonplaats")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BestellingId");
 
@@ -71,7 +89,7 @@ namespace ExcellentTasteCore.Data.Migrations
                         .HasColumnType("varchar(3)")
                         .HasColumnName("ConsumptieCode");
 
-                    b.Property<string>("ConsumptieNaam")
+                    b.Property<string>("Consumpties")
                         .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(false)
@@ -212,15 +230,27 @@ namespace ExcellentTasteCore.Data.Migrations
                         .HasColumnName("DatumToegevoegd")
                         .HasDefaultValueSql("(getdate())");
 
+                    b.Property<int>("Huisnummer")
+                        .HasColumnType("int");
+
                     b.Property<int>("KlantId")
                         .HasColumnType("int")
                         .HasColumnName("klantId");
+
+                    b.Property<string>("Land")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Postcode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Status")
                         .HasDefaultValueSql("((1))");
+
+                    b.Property<string>("Straat")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Tafel")
                         .HasColumnType("int")
@@ -229,6 +259,12 @@ namespace ExcellentTasteCore.Data.Migrations
                     b.Property<TimeSpan>("Tijd")
                         .HasColumnType("time")
                         .HasColumnName("Tijd");
+
+                    b.Property<string>("Toevoeging")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Woonplaats")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ReserveringId");
 

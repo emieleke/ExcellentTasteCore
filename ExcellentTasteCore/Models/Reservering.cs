@@ -24,6 +24,20 @@ namespace ExcellentTasteCore.Models
         [DataType(DataType.Time)]
         public TimeSpan Tijd { get; set; }
         public int Tafel { get; set; }
+
+        /// <summary>
+        /// Hier staan de adresgegevens van de klant. Hierna zijn deze toegevoegd aan de models.
+        /// en is er een nieuwe migration gemaakt.
+        /// </summary>
+        #region Gegevens adres gast
+        public string Straat { get; set; }
+        public int Huisnummer { get; set; }
+        public string Toevoeging { get; set; }
+        public string Postcode { get; set; }
+        public string Woonplaats { get; set; }
+        public string Land { get; set; }
+        #endregion
+
         public int AantalPersonen { get; set; }
         public int Status { get; set; }
         public DateTime DatumToegevoegd { get; set; }
