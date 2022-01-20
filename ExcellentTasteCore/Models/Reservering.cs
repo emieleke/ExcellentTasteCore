@@ -26,8 +26,9 @@ namespace ExcellentTasteCore.Models
         public int Tafel { get; set; }
 
         /// <summary>
-        /// Hier staan de adresgegevens van de klant. Hierna zijn deze toegevoegd aan de models.
-        /// en is er een nieuwe migration gemaakt.
+        /// Hier staan de adresgegevens van de klant.
+        /// Er is een nieuwe migration toegevoegd zodat dit in de database opgenomen kan worden.
+        /// Ik heb de controller opnieuw gegenereerd met CRUD, waardoor de gegevens nu echt ingevoerd kunnen worden.
         /// </summary>
         #region Gegevens adres gast
         public string Straat { get; set; }
