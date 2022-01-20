@@ -20,7 +20,7 @@ namespace ExcellentTasteCore.Controllers
         }
 
         // GET: Bestellings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
             var applicationDbContext = _context.Bestelling.Include(b => b.ConsumptieItem)
                 .Include(b => b.Reservering);
@@ -86,6 +86,10 @@ namespace ExcellentTasteCore.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                // TODO: Get standard price of drinks and food
+
+                //bestelling.Prijs = bestelling.ConsumptieItem.Prijs;
                 _context.Add(bestelling);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -23,9 +23,15 @@
                 @Html.DisplayNameFor(model => model.ConsumptieItem.ConsumptieItemNaam)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ConsumptieItem.Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Reservering)
             </th>
-            <th></th>
+
         </tr>
     </thead>
     <tbody>
@@ -39,8 +45,15 @@
                 @Html.DisplayFor(modelItem => item.DateTimeBereidingConsumptie)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam) 
+                @Html.DisplayFor(modelItem => item.ConsumptieItem.ConsumptieItemNaam)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Reservering.ReserveringId)
             </td>
@@ -48,7 +61,6 @@
                 <a asp-action="Edit" asp-route-id="@item.BestellingId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.BestellingId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.BestellingId">Delete</a> |
-                <a asp-action="KokpageDetail" asp-route-id="@item.BestellingId">KokDetails</a>
 
             </td>
         </tr>

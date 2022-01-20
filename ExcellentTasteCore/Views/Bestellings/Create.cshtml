@@ -17,14 +17,18 @@
                 <select asp-for="ReserveringId" class="form-control" asp-items="ViewBag.ReserveringId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="ConsumptieItemCode" class="control-label">Drankje</label>
+                <label asp-for="ConsumptieItemCode" class="control-label">Drankje/eten</label>
                 <select asp-for="ConsumptieItemCode" class="form-control" asp-items="ViewBag.ConsumptieItemCode"></select>
             </div>
-
             <div class="form-group">
                 <label asp-for="Aantal" class="control-label"></label>
                 <input asp-for="Aantal" class="form-control" />
                 <span asp-validation-for="Aantal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prijs" class="control-label"></label>
+                <input asp-for="Prijs" class="form-control" />
+                <span asp-validation-for="Prijs" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateTimeBereidingConsumptie" class="control-label"></label>
