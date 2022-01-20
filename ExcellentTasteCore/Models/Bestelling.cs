@@ -10,7 +10,6 @@ namespace ExcellentTasteCore.Models
         public int BestellingId { get; set; }
         public int ReserveringId { get; set; }
         public string ConsumptieItemCode { get; set; }
-        
         public int Aantal { get; set; }
         public DateTime? DateTimeBereidingConsumptie { get; set; }
         public decimal? Prijs { get; set; }

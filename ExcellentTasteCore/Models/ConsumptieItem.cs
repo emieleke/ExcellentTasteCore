@@ -16,6 +16,7 @@ namespace ExcellentTasteCore.Models
    
         public string ConsumptieItemCode { get; set; }
 
+
         public string ConsumptieGroepCode { get; set; }
 
         public string ConsumptieItemNaam { get; set; }
